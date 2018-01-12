@@ -280,27 +280,11 @@ class App extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   handleChange(e) {
-    
-    /*////////////////
-    //  e.target es el input en si mismo y
-    //  la propiedad value es lo que hemos escrito
-    //  el componente de react (this) tiene un metodo setState
-    //  que recibe un objeto con los valores que van a
-    //  cambiar en el state con el valor que definimos y ejecuta
-    //  nuevamente el render
-    */////////////////
-    
     this.setState({ text: e.target.value });
   }
   handleSubmit(e) {
-    e.preventDefault(); //Evitamos que la página haga Postback
-    if (!this.state.text) return; //Si no hay nada en el state interrumpir la funcion;
-    
-    /*///////////////
-    //  El metodo this.setState tambien acepta como
-    //  parametro una funcion desde la que podemos
-    //  consultar el stado anterior
-    *///////////////
+    e.preventDefault();
+    if (!this.state.text) return;
     
     this.setState(prevState => ({
       items: prevState.items.concat(prevState.text),
