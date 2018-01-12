@@ -218,3 +218,47 @@ class App extends Component {
 
 export default App;
 ```
+
+Por último y con el fin de demostrar como crear composiciones con los componentes vamos a extraer el listado y meterlos a un nuevo componente. Crearemos un nuevo archivo con el nombre List.js
+
+```javascript
+import React, { Component } from 'react';
+
+class TodoList extends React.Component {
+  render() {
+    return (
+      <ul>
+        {this.props.items.map((item, index) => (
+            <li key={index}>{item}</li>
+        ))}
+      </ul>
+    );
+  }
+}
+
+export default TodoList;
+```
+
+Como ven creamos nuevamente una clase donde insertamos la parte de la lista en el render solo que en lugar del state usaremos las propiedades que heramos del componente padre usando this.props
+Ahora en el archivo App.js, importaremos la clase y la pondremos en lugar de la lista de modo que declaremos los items del state en los props del nuevo componente.
+
+```javascript
+import React, { Component } from 'react';
+import List from './List';
+
+<h3>Mi lista de pendientes</h3>
+<List items={this.state.items} />
+```
+En el constructor limpiaremos los valores por default y los dejaremos vacíos.
+
+```javascript
+constructor(props) {
+  super(props);
+  this.state = {
+    text: '',
+    items: []
+  };
+  this.handleChange = this.handleChange.bind(this);
+  this.handleSubmit = this.handleSubmit.bind(this);
+}
+```

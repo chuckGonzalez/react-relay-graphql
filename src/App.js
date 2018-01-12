@@ -1,15 +1,12 @@
 import React, { Component } from 'react';
+import List from './List';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      text: 'Hola mundo',
-      items: [
-        'Lavar los trastes',
-        'Actualizar la versión de Node.js',
-        'Dar mantenimiento a la DB'
-      ]
+      text: '',
+      items: []
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -46,11 +43,7 @@ class App extends Component {
     return (
       <div>
         <h3>Mi lista de pendientes</h3>
-        <ul>
-          {this.state.items.map((item, index) => (
-            <li key={index}>{item}</li>
-          ))}
-        </ul>
+        <List items={this.state.items} />
         <form onSubmit={this.handleSubmit}>
           <input onChange={this.handleChange} value={this.state.text}/>
           <button>Agregar pendiente</button>
