@@ -190,8 +190,8 @@ class App extends Component {
     this.setState({ text: e.target.value });
   }
   handleSubmit(e) {
-    e.preventDefault(); //Evitamos que la página haga Postback
-    if (!this.state.text) return; //Si no hay nada en el state interrumpir la funcion;
+    e.preventDefault();
+    if (!this.state.text) return;
 
     this.setState(prevState => ({
       items: prevState.items.concat(prevState.text),
