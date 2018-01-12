@@ -49,6 +49,16 @@ Si prestan atención veremos que se agrego un Encabezado y un formulario con un 
 </ul>
 ```
 
-Si en este momento tratan de agregar un nuevo elemento no va a suceder nada porque lo que hasta ahora hemos hecho solo es crear un simple HTML.
+Si en este momento tratan de agregar un nuevo elemento no va a suceder nada porque lo que hasta ahora hemos hecho solo es crear un simple HTML. Para lograr agregar elementos a la lista necesitamos tener un array (lista) para guardar nuestros elementos. Por eso agregaremos lo siguiente:
+
+```javascript
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { items: [] };
+  }
+  //Render va aqui
+}
+```
 
 
