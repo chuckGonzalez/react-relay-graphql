@@ -307,3 +307,5 @@ class App extends Component {
 
 export default App;
 ```
+
+En la siguiente parte del tutorial veremos que es GraphQL y como lo podemos usar para estructurar datos.
