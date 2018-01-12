@@ -125,7 +125,7 @@ class App extends Component {
 }
 
 <input onChange={this.handleChange} value={this.state.text}/>
-´´´
+```
 
 Ahora cuando demos click en el botom el formulario ahara un submit por lo que crearemos una funcion que impida que se refresque la pagina, tome el valor del input del state, lo agregue al Array de pendientes, y limpie el valor del state:
 
